@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+
+        var money = parseInt(prompt('班长口袋里的钱数：'));
+        //当改成true后，运行顺利
+        switch (true) {
+            case (money >= 2000):
+                alert('请大家吃西餐');
+                break;
+            case money >= 1500 && money < 2000:
+                alert('请大家吃快餐');
+                break;
+            case money >= 1000 && money < 1500:
+                alert('请大家喝饮料');
+                break;
+            case money >= 500 && money < 1000:
+                alert('请大家吃棒棒糖');
+                break;
+            default:
+                alert('下次带够钱');
+        }
+
+    </script>
+</body>
+
+</html>

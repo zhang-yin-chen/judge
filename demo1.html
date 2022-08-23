@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="height">请输入你的身高</label>
+    <input type="text" id="height">
+    <br>
+    <label for="weight">请输入你的体重</label>
+    <input type="text" id="weight">
+    <br>
+    <button>开始测量你的体型</button>
+    <p id="result"></p>
+    <SCript>
+
+        let calculation = document.querySelector('button');
+
+        calculation.addEventListener('click', bmi);
+
+        function bmi() {
+            let height = document.getElementById('height').value;
+            let weight = document.getElementById('weight').value;
+            let res = weight / (height * height);
+            console.log(res);
+            if (res < 18.5) {
+                result('您是偏瘦体型，可以适当增肥咯');
+            }
+            else if (res >= 18.5 && res < 25) {        
+                result( '您是标准体型，保持的不错哟');
+            }
+            else if (res >= 25 && res < 28) {
+                result( '是微胖体型，可以多吃粗粮，让饮食结构更加健康吧！');
+            }
+            else if (res >= 28 && res < 32) {
+                result('您是肥胖体型，管住嘴迈开腿开始减肥吧！');                
+            }
+            else{
+                result('您是肥胖体型，管住嘴迈开腿开始减肥吧！');
+            }
+        }
+        let result = (n)=>document.getElementById('result').innerHTML=n;
+    </SCript>
+</body>
+
+</html>

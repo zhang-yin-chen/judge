@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>请输需要判断的水仙花数(三位数):</label><input type="text">
+    <br>
+    <button>开始判断</button>
+    <script>
+        let judge = document.querySelector('button');
+        judge.addEventListener('click', narcissus);
+        function narcissus() {
+            let num = document.querySelector('input').value;
+            let retNum =  /^\d*$/;
+            if(retNum.test(num)){
+                let a = parseInt(num / 100)
+                let b = parseInt((num - a * 100) / 10);
+                let c = num % 10;
+                let res = a * a * a + b * b * b + c * c * c
+                let abc = (res == num) ? alert('是水仙花值') : alert('不是水仙花值');
+            }else{
+                alert('请输入数值');
+            }
+
+            // if(res===parseInt(num)){
+            //     alert('是水仙花值');
+            // }else{
+            //     alert('不是水仙花值');
+            // }
+
+
+        }
+    </script>
+</body>
+
+</html>
